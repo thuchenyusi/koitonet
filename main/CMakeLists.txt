@@ -7,4 +7,4 @@ set(Boost_USE_STATIC_RUNTIME OFF)
 find_package(Boost 1.50 REQUIRED)
 message(STATUS "Boost version: ${Boost_VERSION}")
 
-target_link_libraries(koito PRIVATE lib::server)
+target_link_libraries(koito PRIVATE lib::server lib::client)

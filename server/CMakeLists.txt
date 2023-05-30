@@ -1,6 +1,6 @@
 add_library(server "")
 add_library(lib::server ALIAS server)
-target_sources(server PRIVATE server.cpp)
+target_sources(server PRIVATE ${CMAKE_CURRENT_LIST_DIR}/server.cpp)
 
 set(Boost_USE_STATIC_LIBS OFF)
 set(Boost_USE_MULTITHREADED ON)

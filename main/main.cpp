@@ -8,8 +8,10 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#include <thread>
 
 #include "server.hpp"
+#include "client.hpp"
 
 namespace beast = boost::beast;   // from <boost/beast.hpp>
 namespace http = beast::http;     // from <boost/beast/http.hpp>
@@ -18,6 +20,9 @@ using tcp = boost::asio::ip::tcp; // from <boost/asio/ip/tcp.hpp>
 
 int main(int argc, char *argv[])
 {
+    std::thread client;
+    client = std::thread(client_send, 0);
+
     try
     {
         // Check command line arguments.

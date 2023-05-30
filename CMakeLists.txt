@@ -7,3 +7,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_subdirectory(main)
 add_subdirectory(server)
+add_subdirectory(client)

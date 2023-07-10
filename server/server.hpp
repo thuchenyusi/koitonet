@@ -1,6 +1,18 @@
-#include <boost/asio.hpp>
+#ifndef SERVER_HPP
+#define SERVER_HPP
 
-using tcp = boost::asio::ip::tcp; // from <boost/asio/ip/tcp.hpp>
+#include <string>
 
-// "Loop" forever accepting new connections.
-void http_server(tcp::acceptor &acceptor, tcp::socket &socket);
+class HttpServer {
+ private:
+  std::string host;
+  int port;
+
+ public:
+  HttpServer(std::string host, int port) : host(host), port(port){};
+  ~HttpServer() = default;
+  void start();
+  void stop();
+};
+
+#endif  // SERVER_HPP
